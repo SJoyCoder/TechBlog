@@ -24,45 +24,46 @@ const newFormHandler = async (event) => {
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
-
     const response = await fetch(`/api/blogs/${id}`, {
       method: 'DELETE',
     });
-
+    
     if (response.ok) {
       document.location.replace('/profile');
+      console.log('data-id');
+      console.log(id);
     } else {
       alert('Failed to delete blog');
     }
   }
 };
 
-const updateButtonHandler = async (event) => {
-  event.preventDefault()
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+// const updateButtonHandler = async (event) => {
+//   event.preventDefault()
+//   if (event.target.hasAttribute('data-id')) {
+//     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/blogs/${id}`, {
-      method: 'PUT',
-    });
+//     const response = await fetch(`/blogs/${id}`, {
+//       method: 'PUT',
+//     });
 
-    if (response.ok) {
-      document.location.replace(`/blogs/${id}`);
-    } else {
-      alert('Failed to update blog');
-      console.log(error);
-    }
-  }
-};
+//     if (response.ok) {
+//       document.location.replace(`/blogs/${id}`);
+//     } else {
+//       alert('Failed to update blog');
+//       console.log(err);
+//     }
+//   }
+// };
 
 document
   .querySelector('.new-blog-form')
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.btn-danger')
+  .querySelector('.delBtn')
   .addEventListener('click', delButtonHandler);
 
-  document
-  .querySelector('.btn-info')
-  .addEventListener('click', updateButtonHandler);
+  // document
+  // .querySelector('.upBtn')
+  // .addEventListener('click', updateButtonHandler);
