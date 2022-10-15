@@ -163,6 +163,10 @@ textarea {
   /* 2 */
 }
 
+button {
+  margin: 0.25vh !important
+}
+
 /**
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
@@ -973,7 +977,7 @@ a:hover {
   text-align: center;
   display: inline-block;
   padding: 0.5rem 1.2rem;
-  margin: 0;
+  margin: 5;
   text-decoration: none;
   font-size: 1rem;
   border-radius: 0.3rem;

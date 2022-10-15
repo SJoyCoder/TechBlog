@@ -79,4 +79,10 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.put('/blogs/:id', withAuth, async (req, res) => {
+  console.log("HIT ME BABY ONE MORE TIEM")
+    res.render('update');
+  }
+);
+
 module.exports = router;
